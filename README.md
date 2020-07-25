@@ -36,3 +36,7 @@ Shared state is not good because you have to know the history of its variables a
 The state of our program should be passed through pure functions. State should not be shared. 
 
 Pass state and clone it.
+
+4. The use of const is an example of immutability. You cannot assign a new value to it. 
+If you try and sort an array that was assigned to a const variable, you are able to. This means that const does not completely make the variable immutable. 
+If you called Object.freeze() on a const variable an try to sort it, then you will get a console error. This demonstrates a completely immutable variable
