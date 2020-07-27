@@ -9,10 +9,12 @@ import {
     storeUser,
 } from './AvoidSideEffects/exerciseWithoutSideEffects';
 import { getObj, getObj2, changeObj2, obj, assignObject, obj0 } from './AvoidSharedState/avoidSharedState';
+import {avoidMutationExercise} from './AvoidSharedState/avoidMutationExercise'
 
 const Spacer = () => {
   return <div>----------------------</div>
 }
+
 
 const handleDeepAssign = () => {
   let obj1 = getObj(obj0)
@@ -39,6 +41,11 @@ const handleDeepAssign = () => {
 }
 
 function App() {
+    React.useEffect(() => {
+        avoidMutationExercise()
+    },[])
+
+    
     return (
         <div className='App'>
             <div>
