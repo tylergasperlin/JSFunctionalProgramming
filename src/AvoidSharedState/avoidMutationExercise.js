@@ -1,10 +1,10 @@
 
 
 export const avoidMutationExercise = () => {
-    var users = [{name: "James",score: 30,tries: 1}, {name: "Mary", score: 110,tries: 4}, {name: "Henry",score: 80,tries: 3}];
+    const users = [{name: "James",score: 30,tries: 1}, {name: "Mary", score: 110,tries: 4}, {name: "Henry",score: 80,tries: 3}];
 
     //Modifies Data
-    var storeUser = function(arr, user) {
+    const storeUser = function(arr, user) {
         for (let i = 0; i < arr.length; i++) {
             if (arr[i].name.toLowerCase() === user.name.toLowerCase()) {
                 arr[i] = user;
@@ -14,7 +14,7 @@ export const avoidMutationExercise = () => {
     };
     
     //Pure Functions
-    var getUser = function(arr, name) {
+    const getUser = function(arr, name) {
         for (let i = 0; i < arr.length; i++) {
             if (arr[i].name.toLowerCase() === name.toLowerCase()) {
                 return arr[i];
@@ -23,7 +23,7 @@ export const avoidMutationExercise = () => {
         return null;
     };
     
-    var updateScore = function(user, newAmt) {
+    const updateScore = function(user, newAmt) {
         const userToUpdate = cloneObject(user)
         if (userToUpdate) {
             userToUpdate.score += newAmt;
@@ -31,7 +31,7 @@ export const avoidMutationExercise = () => {
         }
     };
     
-    var updateTries = function(user) {
+    const updateTries = function(user) {
         const userToUpdate = cloneObject(user)
         if (userToUpdate) {
             userToUpdate.tries++;
@@ -40,7 +40,7 @@ export const avoidMutationExercise = () => {
     };
 
     // Without running this function, each time we updateScre or updateTries, the original object would be modified due to mutations and due to objects being passed by ref
-    var cloneObject = (objectToClone) => {
+    const cloneObject = (objectToClone) => {
         return JSON.parse(JSON.stringify(objectToClone))
     }
     
