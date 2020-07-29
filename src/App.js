@@ -10,7 +10,7 @@ import {
 } from './AvoidSideEffects/exerciseWithoutSideEffects';
 import { getObj, getObj2, changeObj2, obj, assignObject, obj0 } from './AvoidSharedState/avoidSharedState';
 import {avoidMutationExercise} from './AvoidSharedState/avoidMutationExercise'
-
+import {scores, removeScores} from './AvoidSharedState/mapReduceFilterExercise'
 const Spacer = () => {
   return <div>----------------------</div>
 }
@@ -76,6 +76,10 @@ function App() {
                 <div>{Object.values(getObj(obj))}</div>
                 <div>EXAMPLE OBJECT DEEP ASIGN</div>
                 {handleDeepAssign()}
+                <div>Map Reduce Filter Exercise:</div>
+                {removeScores(scores).map(item => {
+                    return <div>{ item }</div>
+                })}
             </div>
         </div>
     );
