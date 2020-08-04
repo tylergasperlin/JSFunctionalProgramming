@@ -81,3 +81,17 @@ So the spread operator is another way to do shallow cloning.
 However, it is important to remember that the JSON.parse(JSON.stringify()) method is more flexible and will make sure to do deep cloning, so I usually prefer to use that method.
 
 ------
+
+# 3. Function Composition
+
+Funcitons in functional programming
+- Functions hand an input
+- Functions return a value
+- Functions are simplified to a single task
+
+Procedure = checkWorks(string input) = trims => splits into an array => checks length
+
+Turn procedure into function = string input => trimFunction => string output => splitFunction => array output => checkFunction => boolean output
+
+This is how that looks compared to one function procedure
+check(splits(trim(str)))
