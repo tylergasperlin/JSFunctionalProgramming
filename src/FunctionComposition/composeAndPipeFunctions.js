@@ -1,5 +1,5 @@
 
-const pipe = function(...fns) {
+export const pipe = function(...fns) {
     return function(x) {
         return fns.reduce(function(v, f) {
             return f(v);
@@ -7,7 +7,7 @@ const pipe = function(...fns) {
     }
 };
 
-const compose = function(...fns) {
+export const compose = function(...fns) {
     return function(x) {
         return fns.reduceRight(function(v, f) {
             return f(v);

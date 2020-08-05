@@ -12,6 +12,7 @@ import { getObj, getObj2, changeObj2, obj, assignObject, obj0 } from './AvoidSha
 import {avoidMutationExercise} from './AvoidSharedState/avoidMutationExercise'
 import {scores, removeScores} from './AvoidSharedState/mapReduceFilterExercise'
 import {prepareString, str} from './FunctionComposition/composeAndPipe'
+import {functionalCompositionExercise} from './FunctionComposition/functionalCompositionExercise'
 
 const Spacer = () => {
   return <div>----------------------</div>
@@ -91,6 +92,8 @@ function App() {
                 {prepareString(str).map((item) => {
                     return <div>{item}</div>
                 })}
+                <div>Compose and pipe exercise in console:</div>
+                <div>{functionalCompositionExercise()}</div>
             </div>
         </div>
     );
