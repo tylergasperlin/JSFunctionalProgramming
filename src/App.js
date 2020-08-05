@@ -11,6 +11,8 @@ import {
 import { getObj, getObj2, changeObj2, obj, assignObject, obj0 } from './AvoidSharedState/avoidSharedState';
 import {avoidMutationExercise} from './AvoidSharedState/avoidMutationExercise'
 import {scores, removeScores} from './AvoidSharedState/mapReduceFilterExercise'
+import {prepareString, str} from './FunctionComposition/composeAndPipe'
+
 const Spacer = () => {
   return <div>----------------------</div>
 }
@@ -50,7 +52,8 @@ function App() {
         <div className='App'>
             <div>
               <Spacer/>
-                <div>Side Effects and Pure Functions</div>
+                <div>1. Side Effects and Pure Functions</div>
+                <Spacer/>
                 Select User:
                 <div> {Object.values(selectUser(usersDara, 0))} </div>
                 Update Score:
@@ -64,7 +67,8 @@ function App() {
             </div>
             <Spacer/>
             <div>
-                <div>Side Effects and Pure Functions</div>
+                <div>2. AVOID SHARED STATE</div>
+                <Spacer/>
                 <div>EXAMPLE OBJECT ASSSIGN</div>
                 Print obj:
                 <div>{Object.values(getObj(obj))}</div>
@@ -79,6 +83,13 @@ function App() {
                 <div>Map Reduce Filter Exercise:</div>
                 {removeScores(scores).map(item => {
                     return <div>{ item }</div>
+                })}
+                <Spacer/>
+                <div>3. Function Composition</div>
+                <Spacer/>
+                <div>Compose and Pipe:</div>
+                {prepareString(str).map((item) => {
+                    return <div>{item}</div>
                 })}
             </div>
         </div>
