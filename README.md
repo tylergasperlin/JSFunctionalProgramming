@@ -102,3 +102,5 @@ Arity refers to the number of params a function has. If function has one param i
 // Returned function has closure over any values that were previously given
 // Return function from another function = higher order function
 
+Currying can be used to take a function that expects multiple arguments and reduce this to multiple function that expect a single argument. High arity functions can be used to achieve composition. 
+

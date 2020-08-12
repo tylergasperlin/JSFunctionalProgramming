@@ -13,3 +13,4 @@ export const welcomeGreet = curryGreeting("Welcome");
 // Closure can be used to return a function that has reduced arity
 // Returned function has closure over any values that were previously given
 // Return function from another function = higher order function
+
