@@ -13,7 +13,8 @@ import {avoidMutationExercise} from './AvoidSharedState/avoidMutationExercise'
 import {scores, removeScores} from './AvoidSharedState/mapReduceFilterExercise'
 import {prepareString, str} from './FunctionComposition/composeAndPipe'
 import {functionalCompositionExercise} from './FunctionComposition/functionalCompositionExercise'
-import { newestUser, updateUser } from './FunctionComposition/arityExample';
+import { newestUser, updateUser} from './FunctionComposition/arityExample';
+import { welomeGreet, welcomeGreet } from './FunctionComposition/curryingExample';
 
 const Spacer = () => {
   return <div>----------------------</div>
@@ -99,6 +100,12 @@ function App() {
                 <div>{Object.values(newestUser).map(item => {
                     return <div>{item}</div>
                 })}</div>
+                <div>Currying:</div>
+                <div>
+                    {
+                        welcomeGreet("Mary")
+                    }
+                </div>
             </div>
         </div>
     );

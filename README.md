@@ -95,3 +95,10 @@ Turn procedure into function = string input => trimFunction => string output => 
 
 This is how that looks compared to one function procedure
 check(splits(trim(str)))
+
+Arity refers to the number of params a function has. If function has one param it has an arity of 1. 
+
+// Closure can be used to return a function that has reduced arity
+// Returned function has closure over any values that were previously given
+// Return function from another function = higher order function
+
