@@ -104,3 +104,16 @@ Arity refers to the number of params a function has. If function has one param i
 
 Currying can be used to take a function that expects multiple arguments and reduce this to multiple function that expect a single argument. High arity functions can be used to achieve composition. 
 
+- A partial applicaiton is a function which has been applied to some, but not yet all of its arguments. In other words its a function which has some arguments fixed inside its closure scope.
+
+- Partial applicaiton is when we call a function with fewer arguments than it expects and that function returns a funciton that takes the remaining arguments. 
+
+- In currying you always only pass one argument to the function
+
+- A curried function is a funciton that takes multiple arguments one at a time
+
+- Currying is where a function that expects multiple arguments is broken down into successive functions that ach take a single argument and return another function to accept the next argument
+
+- Advantages of currying
+1. Currying can be used to specialize functions
+2. Currying simplifies function composition

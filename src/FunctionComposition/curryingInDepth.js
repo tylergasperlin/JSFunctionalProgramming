@@ -1,15 +1,22 @@
-function curry(fn,arity = fn.length) {
+
+// param fn =  this function accepts a function
+// param arity = number of arguments that can be acceptd
+function curry(fn, arity = fn.length) {
+    // this function is immediately invoked
+    // Note that we can call nextCurried outside of where it is defined because it has closure
     return (function nextCurried(prevArgs){
+        // The function returns a function 
+        // The function below has closure over the immediatly invoked function
         return function curried(nextArg){
             var args = [ ...prevArgs, nextArg ];
-            if (args.length >= arity) {
-                return fn( ...args );
+            if (args.length >= arity) { // we have access to arity and fn due to closure
+                return fn( ...args ); // this calls the function that was supplied with all arguments it needs
             }
-            else {
-                return nextCurried( args );
+            else { // if we do not have all arguments we need we call the next function
+                return nextCurried( args ); // we can call this function outside of the function because it has closure
             }
         };
-    })( [] );
+    })( [] ); 
 }
 
 const pipe = function(...fns) {
@@ -27,6 +34,9 @@ const compose = function(...fns) {
         }, x);
     }
 };
+
+const curriedTotalIt = curry(totalIt);
+const curriedDoArray = curry(doArray)
 
 
 
@@ -59,14 +69,16 @@ const newFun2 = pipe (
 /////////////APPROACH 2//////////////
 
 
-const newFun = pipe (
+export const newFun = pipe (
+    // Same thing as approach 1 but we do not need to create the curry function first
     curry(ffun)(1)(2),
     curry(gfun)(4),
     curry(hfun)(5)(6));
 
 
+///////////////ANOTHER EXAMPLE///////////////
 
-
+// THIS DOES NOT NEED TO BE CURRIED BECAUSE THERE IS ONLY ONE PARAM
 const doubleNum = function(num) {
     return num + num;
 };
@@ -80,8 +92,8 @@ const doArray = function(num1, num2) {
 };
 
 const newFunction = pipe(
-    doubleNum,
-    curry(totalIt)(3)(2)(1),
+    doubleNum, // DOES NOT NEED TO BE CURRIED
+    curry(totalIt)(3)(2)(1), // curry(totalIt) is a curried function and the result is a curried function. This is invoked three times in this example
     curry(doArray)(50));
 
 

@@ -15,6 +15,7 @@ import {prepareString, str} from './FunctionComposition/composeAndPipe'
 import {functionalCompositionExercise} from './FunctionComposition/functionalCompositionExercise'
 import { newestUser, updateUser} from './FunctionComposition/arityExample';
 import { welomeGreet, welcomeGreet } from './FunctionComposition/curryingExample';
+import { newFun } from './FunctionComposition/curryingInDepth'
 
 const Spacer = () => {
   return <div>----------------------</div>
@@ -100,11 +101,15 @@ function App() {
                 <div>{Object.values(newestUser).map(item => {
                     return <div>{item}</div>
                 })}</div>
-                <div>Currying:</div>
+                <div>Currying (console):</div>
                 <div>
                     {
                         welcomeGreet("Mary")
                     }
+                </div>
+                <div>Currying Advanced</div>
+                <div>
+                    {newFun(3)}
                 </div>
             </div>
         </div>
