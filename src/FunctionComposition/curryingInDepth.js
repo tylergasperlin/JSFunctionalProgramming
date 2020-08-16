@@ -35,9 +35,6 @@ const compose = function(...fns) {
     }
 };
 
-const curriedTotalIt = curry(totalIt);
-const curriedDoArray = curry(doArray)
-
 
 
 const ffun = function(a, b, c) {
