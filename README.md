@@ -117,3 +117,9 @@ Currying can be used to take a function that expects multiple arguments and redu
 - Advantages of currying
 1. Currying can be used to specialize functions
 2. Currying simplifies function composition
+
+4. Imperative and Delarative programming
+
+a. Imperative programming: a programming style that tells the computer how to accomplish some task
+
+b. Declarative programming: expresses the logic of a program without identifying the control flow. Control flow is abstracted away so declarative code only needs to specify what to do 
